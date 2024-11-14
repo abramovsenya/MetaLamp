@@ -14,7 +14,7 @@ module.exports = (env, argv) => {
 		output: {
 			filename: isDev ? 'bundle.js' : 'bundle.[contenthash].js',
 			path: path.resolve(__dirname, 'dist'),
-			publicPath: '/', // это важно для работы с путями
+			publicPath: '/', // Путь для всех ресурсов относительно корня
 		},
 		resolve: {
 			alias: {
@@ -37,10 +37,10 @@ module.exports = (env, argv) => {
 					],
 				},
 				{
-					test: /\.(png|jpe?g|gif|svg|woff2?|eot|ttf|otf)$/i,
+					test: /\.(png|jpe?g|gif|svg)$/i,
 					type: 'asset/resource',
 					generator: {
-						filename: 'assets/icons/[name][ext]', // Путь к картинкам в dist
+						filename: 'assets/icons/[name][ext]', // Путь для картинок в dist
 					},
 				},
 			],
