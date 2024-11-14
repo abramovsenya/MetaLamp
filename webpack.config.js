@@ -1,4 +1,3 @@
-// webpack.config.js
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -8,13 +7,14 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = (env, argv) => {
 	const isDev = argv.mode === 'development';
 
-	console.log(`Mode: ${argv.mode}`); // Проверка режима при запуске
+	console.log(`Mode: ${argv.mode}`);
 
 	return {
 		entry: './src/index.js',
 		output: {
-			filename: isDev ? 'bundle.js' : 'bundle.[contenthash].js', // Без хэша в dev для удобства
+			filename: isDev ? 'bundle.js' : 'bundle.[contenthash].js',
 			path: path.resolve(__dirname, 'dist'),
+			publicPath: '/', // это важно для работы с путями
 		},
 		resolve: {
 			alias: {
@@ -39,6 +39,9 @@ module.exports = (env, argv) => {
 				{
 					test: /\.(png|jpe?g|gif|svg|woff2?|eot|ttf|otf)$/i,
 					type: 'asset/resource',
+					generator: {
+						filename: 'assets/icons/[name][ext]', // Путь к картинкам в dist
+					},
 				},
 			],
 		},

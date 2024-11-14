@@ -4,15 +4,16 @@ $primary-color: #1f2041;
 $purple-color: #bc9cff;
 $green-color: #6fcf97;
 // gradients
-$primary-gradient: liner(
+$primary-gradient: linear-gradient(
 	180deg,
-	rgb(187.61, 155.9, 255) 0%,
-	rgb(139.42, 163.62, 249.43) 100%
+	rgb(187, 155, 255) 0%,
+	rgb(139, 163, 249) 100%
 );
-$secondary-gradient: liner(
+
+$secondary-gradient: linear-gradient(
 	180deg,
 	rgb(111, 207, 151) 0%,
-	rgb(102.11, 210.13, 233.84) 100%
+	rgb(102, 210, 233) 100%
 );
 // mixin for colors
 @mixin color-opacity($color, $opacity) {
