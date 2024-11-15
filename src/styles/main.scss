@@ -1,7 +1,4 @@
 @use './variables' as *;
 @use './fonts.scss' as *;
+@use './base.scss' as *;
 @use '@/components/button/button';
-
-* {
-	font-family: $primary-font;
-}
