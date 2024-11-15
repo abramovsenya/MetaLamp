@@ -43,6 +43,13 @@ module.exports = (env, argv) => {
 						filename: 'assets/icons/[name][ext]', // Путь для картинок в dist
 					},
 				},
+				{
+					test: /\.(woff2?|eot|ttf|otf)$/i, // Обработка всех типов шрифтов
+					type: 'asset/resource', // Копируем в папку dist
+					generator: {
+						filename: 'assets/fonts/[name][ext][query]', // Шрифты в папке dist/assets/fonts/
+					},
+				},
 			],
 		},
 		plugins: [

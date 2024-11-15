@@ -1,2 +1,6 @@
 @use './variables' as *;
 @use '@/components/button/button';
+
+* {
+	font-family: $primary-font;
+}
