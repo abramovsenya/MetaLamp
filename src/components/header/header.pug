@@ -1,4 +1,9 @@
+
 header.header.container
   nav.header__nav
+    //- +button('a', '', 'https://example.com', '', 'secondary')
+    //-   | Перейти на сайт
     a(href="#")
-      img(src=require("../../assets/icons/logo.svg"))
+      img(src=require('../../assets/icons/logo.svg') alt="Логотип")
+      //- include /src/components/button/button.pug
+    

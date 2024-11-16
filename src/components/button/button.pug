@@ -1,2 +1,7 @@
-button.button.button--primary(onclick="handleClick()")
-  | Click me
+mixin button(tag='button', type='button', href='', className='', modifier='')
+  if tag === 'button'
+    button(class=`button button--${modifier} ${className}` type=type)
+      block
+  else if tag === 'a'
+    a(class=`button button--${modifier} ${className}` href=href)
+      block
